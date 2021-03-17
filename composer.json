@@ -1,0 +1,21 @@
+{
+  "name": "nem-c/rfd-woo-variable-tables",
+  "description": "Adds tables for variable products instead of series of accordions",
+  "type": "plugin",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Nemanja Cimbaljevic",
+      "email": "zion.trooper@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "phpcompatibility/php-compatibility": "master",
+    "wp-coding-standards/wpcs": "master",
+    "dealerdirect/phpcodesniffer-composer-installer": "master"
+  }
+}

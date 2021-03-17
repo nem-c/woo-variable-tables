@@ -1,0 +1,42 @@
+@import '../../../node_modules/include-media/dist/include-media';
+
+$breakpoints: (
+        phone: 40rem,
+        tablet: 64rem,
+        desktop: 80rem
+);
+
+.hide-for-phone {
+  display: block;
+  @include media("<=phone") {
+    display: none;
+  }
+}
+
+.hide-for-tablet {
+  display: block;
+  @include media(">phone", "<=tablet") {
+    display: none;
+  }
+}
+
+.hide-for-up-to-tablet {
+  display: block;
+  @include media("<tablet") {
+    display: none;
+  }
+}
+
+.hide-for-above-tablet {
+  display: block;
+  @include media(">=tablet") {
+    display: none;
+  }
+}
+
+.show-for-above-tablet {
+  display: none;
+  @include media(">=tablet") {
+    display: block;
+  }
+}
