@@ -8,15 +8,15 @@
  * @link       https://cimba.blog/
  * @since      0.9.0
  *
- * @package    RFD\Woo_Variable_Tables
- * @subpackage RFD\Woo_Variable_Tables\Includes
+ * @package    RFD\Woo_Variable_Table
+ * @subpackage RFD\Woo_Variable_Table\Includes
  */
 
-namespace RFD\Woo_Variable_Tables;
+namespace RFD\Woo_Variable_Table;
 
 use RFD\Core\I18n;
 use RFD\Core\Abstracts\Init as Abstract_Init;
-use RFD\Woo_Variable_Tables\Meta_Boxes\Product_Cat_Term_Meta_Box;
+use RFD\Woo_Variable_Table\Meta_Boxes\Product_Cat_Term_Meta_Box;
 
 /**
  * Class Init
@@ -29,7 +29,7 @@ class Init extends Abstract_Init {
 	 * @var array
 	 */
 	protected $meta_boxes = array(
-		'\RFD\Woo_Variable_Tables\Meta_Boxes\Product_Cat_Term_Meta_Box',
+		'\RFD\Woo_Variable_Table\Meta_Boxes\Product_Cat_Term_Meta_Box',
 	);
 
 	/**
@@ -41,11 +41,11 @@ class Init extends Abstract_Init {
 	 */
 	public function __construct() {
 		if ( defined( 'RFD_TABLE_VARIABLE_PRODUCTS_VERSION' ) ) {
-			$this->version = RFD_WOO_VARIABLE_TABLES_VERSION;
+			$this->version = RFD_WOO_VARIABLE_TABLE_VERSION;
 		} else {
 			$this->version = '0.9.0';
 		}
-		$this->plugin_name = RFD_WOO_VARIABLE_TABLES_PLUGIN;
+		$this->plugin_name = RFD_WOO_VARIABLE_TABLE_PLUGIN;
 	}
 
 	/**
@@ -61,8 +61,8 @@ class Init extends Abstract_Init {
 		I18n::init(
 			$this->loader,
 			array(
-				'domain'          => 'rfd-woo-variable-tables',
-				'plugin_rel_path' => RFD_WOO_VARIABLE_TABLES_PLUGIN_DIR . 'languages' . DIRECTORY_SEPARATOR,
+				'domain'          => 'rfd-woo-variable-table',
+				'plugin_rel_path' => RFD_WOO_VARIABLE_TABLE_PLUGIN_DIR . 'languages' . DIRECTORY_SEPARATOR,
 			)
 		);
 	}
