@@ -7,6 +7,7 @@
  *
  * @package    RFD\Woo_Variable_Table
  *
+ * @var string $nonce_field
  * @var array $product_types
  * @var array $product_attributes
  * @var array $product_fields
@@ -16,6 +17,7 @@ use RFD\Core\Input;
 
 // @codingStandardsIgnoreStart
 ?>
+<?php echo $nonce_field; ?>
 <div class="form-field">
     <label for="woo_variable_tables_default_product_type">
 		<?php _e( 'Default product type:', 'rfd-woo-variable-table' ); ?>

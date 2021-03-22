@@ -14,7 +14,7 @@ if ( false === function_exists( 'RFD_WOO_VARIABLE_TABLE_version' ) ) {
 	 *
 	 * @return string
 	 */
-	function RFD_WOO_VARIABLE_TABLE_version(): string {
+	function rfd_woo_variable_table_version(): string {
 		return RFD_WOO_VARIABLE_TABLE_VERSION;
 	}
 }

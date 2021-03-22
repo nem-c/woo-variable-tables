@@ -41,6 +41,10 @@ require_once RFD_WOO_VARIABLE_TABLE_PLUGIN_DIR . 'functions/functions.php';
  * The code that runs during plugin activation.
  */
 $init_plugin = new Init();
-( function () use ( $init_plugin ) {
-	$init_plugin->prepare()->run();
-} )();
+
+add_action(
+	'woocommerce_loaded',
+	function () use ( $init_plugin ) {
+		$init_plugin->prepare()->run();
+	}
+);
