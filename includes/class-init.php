@@ -16,7 +16,7 @@ namespace RFD\Woo_Variable_Table;
 
 use RFD\Core\I18n;
 use RFD\Core\Abstracts\Init as Abstract_Init;
-use RFD\Woo_Variable_Table\Meta_Boxes\Product_Cat_Term_Meta_Box;
+use RFD\Woo_Variable_Table\Dokan\Variations_Table;
 use RFD\Woo_Variable_Table\Woo\Variable_Product;
 
 /**
@@ -73,6 +73,13 @@ class Init extends Abstract_Init {
 	 */
 	protected function prepare_general(): void {
 		Variable_Product::init( $this->loader );
+	}
+
+	/**
+	 * Prepare hooks for frontend only
+	 */
+	protected function prepare_frontend(): void {
+		Variations_Table::init( $this->loader );
 	}
 
 

@@ -8,13 +8,5 @@
  * @package    RFD\Woo_Variable_Table
  */
 
-if ( false === function_exists( 'RFD_WOO_VARIABLE_TABLE_version' ) ) {
-	/**
-	 * Get plugin version
-	 *
-	 * @return string
-	 */
-	function rfd_woo_variable_table_version(): string {
-		return RFD_WOO_VARIABLE_TABLE_VERSION;
-	}
-}
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'math.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'woo.php';
