@@ -1,3 +1,10 @@
+# Release 1.0.3
+
+Fixes:
+
+* Problem with Dokan Pro where Attributes and Variation Save Variations process had higher priority causing wrong data
+  to be saved.
+
 # Release 1.0.2
 
 Fixes:

@@ -45,7 +45,7 @@ class Variations_Table {
 			self::$instance = new static();
 		}
 
-		$loader->add_action( 'dokan_product_edit_after_main', self::$instance, 'render', 25, 2 );
+		$loader->add_action( 'dokan_product_edit_after_main', self::$instance, 'render', $priority, 2 );
 		$loader->add_action( 'dokan_product_updated', self::$instance, 'maybe_save', $priority, 2 );
 
 		return self::$instance;

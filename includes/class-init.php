@@ -79,7 +79,7 @@ class Init extends Abstract_Init {
 	 * Prepare hooks for frontend only
 	 */
 	protected function prepare_frontend(): void {
-		Variations_Table::init( $this->loader );
+		Variations_Table::init( $this->loader, 25 );
 	}
 
 
