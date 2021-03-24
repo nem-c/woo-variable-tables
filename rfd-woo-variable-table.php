@@ -3,7 +3,7 @@
  * Plugin Name: Woo Table Variable Products
  * Plugin URI:  https://cimba.dev/
  * Description: Edit your variable products with ease using table variable products.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      Nemanja Cimbaljevic
  * Author URI:  https://codeable.io/developers/nemanja-cimbaljevic/?ref=jjTaE
  * Text Domain: rfd-woo-variable-table
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Current plugin version.
  */
 define( 'RFD_WOO_VARIABLE_TABLE_PLUGIN', 'rfd-woo-variable-table' );
-define( 'RFD_WOO_VARIABLE_TABLE_VERSION', '1.0.1' );
+define( 'RFD_WOO_VARIABLE_TABLE_VERSION', '1.0.2' );
 
 define( 'RFD_WOO_VARIABLE_TABLE_PLUGIN_DIR', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
 define( 'RFD_WOO_VARIABLE_TABLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

@@ -129,14 +129,6 @@ class Variations_Table {
 				continue;
 			}
 
-			// set regular price if set.
-			if ( true === isset( $data['regular_price'] ) ) {
-				$product_variation->set_regular_price( floatval( $data['regular_price'] ) );
-			}
-			// set sale price if set.
-			if ( true === isset( $data['sale_price'] ) ) {
-				$product_variation->set_sale_price( floatval( $data['sale_price'] ) );
-			}
 			// set sku if set.
 			if ( true === isset( $data['sku'] ) ) {
 				try {
@@ -161,7 +153,50 @@ class Variations_Table {
 			}
 
 			$product_variation->save();
+
+			$this->save_prices(
+				$product_variation,
+				$data['regular_price'] ?? false,
+				$data['sale_price'] ?? false
+			);
 		}
+	}
+
+	/**
+	 * Save product prices.
+	 *
+	 * @param WC_Product $product WC_Product object.
+	 * @param mixed $regular_price Regular price value.
+	 * @param mixed $sale_price Sale price value.
+	 */
+	protected function save_prices( WC_Product $product, $regular_price, $sale_price ): void {  //phpcs:ignore Generic.Metrics.CyclomaticComplexity.TooHigh
+		$no_regular_price = false;
+		$no_sale_price    = false;
+
+		if ( false === is_numeric( $regular_price ) ) {
+			$product->set_regular_price( false );
+			$product->set_sale_price( false );
+			$product->set_price( false );
+
+			$no_regular_price = true;
+		}
+		if ( false === is_numeric( $sale_price ) ) {
+			$product->set_sale_price( false );
+
+			$no_sale_price = true;
+		}
+
+		if ( false === $no_regular_price ) {
+			$product->set_regular_price( floatval( $regular_price ) );
+			$product->set_price( floatval( $regular_price ) );
+		}
+
+		if ( false === $no_sale_price ) {
+			$product->set_sale_price( floatval( $sale_price ) );
+			$product->set_price( floatval( $sale_price ) );
+		}
+
+		$product->save();
 	}
 
 	/**
