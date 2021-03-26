@@ -73,12 +73,7 @@ class Init extends Abstract_Init {
 	 */
 	protected function prepare_general(): void {
 		Variable_Product::init( $this->loader );
-	}
-
-	/**
-	 * Prepare hooks for frontend only
-	 */
-	protected function prepare_frontend(): void {
+		// while it is frontend only - has to hook into admin-ajax.
 		Variations_Table::init( $this->loader, 25 );
 	}
 

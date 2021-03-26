@@ -66,11 +66,11 @@ class Variable_Product {
 			self::$instance = new static();
 		}
 
-		if ( true === is_admin() ) {
-			self::init_admin( $loader, $priority );
-		} else {
-			self::init_frontend( $loader, $priority );
-		}
+		$loader->add_action( 'transition_post_status', self::$instance, 'detect_transition', $priority, 3 );
+		// priority has to be higher than already set by WooCommerce in WC_Meta_Box_Product_Data::save.
+		$loader->add_action( 'woocommerce_process_product_meta', self::$instance, 'execute', 99, 2 );
+
+		$loader->add_action( 'dokan_new_product_added', self::$instance, 'execute', 99, 2 );
 
 		return self::$instance;
 	}
@@ -82,9 +82,7 @@ class Variable_Product {
 	 * @param int $priority Priority.
 	 */
 	public static function init_admin( Loader $loader, $priority = 10 ) {
-		$loader->add_action( 'transition_post_status', self::$instance, 'detect_transition', $priority, 3 );
-		// priority has to be higher than already set by WooCommerce in WC_Meta_Box_Product_Data::save.
-		$loader->add_action( 'woocommerce_process_product_meta', self::$instance, 'execute', 99, 2 );
+
 	}
 
 	/**
@@ -95,7 +93,7 @@ class Variable_Product {
 	 * @param int $priority Priority.
 	 */
 	public static function init_frontend( Loader $loader, $priority = 10 ) {
-		$loader->add_action( 'dokan_new_product_added', self::$instance, 'execute', 99, 2 );
+
 	}
 
 	/**
